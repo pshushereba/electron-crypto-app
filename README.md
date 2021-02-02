@@ -4,7 +4,7 @@ An application to track various cryptocurrency prices using React and Electron
 
 ### Add required information to README
 
-- [ ] Set up Webpack config
+- [x] Set up Webpack config
 - [ ] Set up React Components
 - [ ] Fetch Pricing Data
 - [ ] Generate QR Codes
@@ -16,3 +16,4 @@ An application to track various cryptocurrency prices using React and Electron
 - [ ] Minimize / Reduce scrolling as much as possible
 - [ ] Make project two-tone
 - [ ] Make GH repo public when finished
+- [ ] Remove Sass packages and adjust webpack.config.js
