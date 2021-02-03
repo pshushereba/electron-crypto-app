@@ -6,6 +6,7 @@ import theme from "./styles/Theme.js";
 import Nav from "./components/Nav.js";
 
 import HomeView from "./views/Home.js";
+import FeedsView from "./views/Feeds.js";
 
 function App() {
   return (
@@ -15,9 +16,7 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={HomeView} />
-          <Route exact path="/feeds">
-            <h1>Twitter Feeds will go here.</h1>
-          </Route>
+          <Route exact path="/feeds" component={FeedsView} />
         </Switch>
       </ThemeProvider>
     </>

@@ -25,3 +25,20 @@ An application to track various cryptocurrency prices using React and Electron
 | Cardano | qzawljRxB5bYu | https://cdn.coinranking.com/ryY28nXhW/ada.svg   |
 | Tezos   | fsIbGOEJWbzxG | https://cdn.coinranking.com/HkLUdilQ7/xtz.svg   |
 | Burst   | LUbkfWw7GwJ73 | https://cdn.coinranking.com/HJd-fB5NG/burst.svg |
+
+```javascript
+{
+    "data": [
+        {
+            "id": "36670025",
+            "name": "BBC News Africa",
+            "username": "BBCAfrica"
+        },
+        {
+            "id": "2312333412",
+            "name": "Ethereum",
+            "username": "ethereum"
+        }
+    ]
+}
+```

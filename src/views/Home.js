@@ -14,11 +14,10 @@ const Home = () => {
       )
       .then((res) => {
         setCoinInfo(res.data.data.coins);
-        console.log(res.data);
       })
       .catch((err) => console.error(err));
   }, []);
-  console.log("coinInfo", coinInfo);
+
   return (
     <>
       <Container maxWidth={false}>
@@ -30,7 +29,7 @@ const Home = () => {
             ? coinInfo.map((coin) => {
                 return (
                   <Grid item={true} xs={12} sm={6} md={4}>
-                    <CoinDataCard data={coin} />
+                    <CoinDataCard data={coin} key={coin.uuid} />
                   </Grid>
                 );
               })
