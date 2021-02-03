@@ -1,4 +1,10 @@
-const { app, BrowserWindow, ipcMain, Notification } = require("electron");
+const {
+  app,
+  BrowserWindow,
+  ipcMain,
+  Notification,
+  desktopCapturer,
+} = require("electron");
 const path = require("path");
 const isDev = !app.isPackaged;
 

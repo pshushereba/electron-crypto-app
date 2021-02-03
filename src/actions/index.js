@@ -10,9 +10,13 @@ export const GET_TWITTER_USERS_START = "GET_TWITTER_USERS_START";
 export const GET_TWITTER_USERS_SUCCESS = "GET_TWITTER_USERS_SUCCESS";
 export const GET_TWITTER_USERS_FAIL = "GET_TWITTER_USERS_FAIL";
 
-export const GET_TWEETS_START = "GET_TWEETS_START";
-export const GET_TWEETS_SUCCESS = "GET_TWEETS_SUCCESS";
-export const GET_TWEETS_FAIL = "GET_TWEETS_FAIL";
+export const GET_BBC_TWEETS_START = "GET_BBC_TWEETS_START";
+export const GET_BBC_TWEETS_SUCCESS = "GET_BBC_TWEETS_SUCCESS";
+export const GET_BBC_TWEETS_FAIL = "GET_BBC_TWEETS_FAIL";
+
+export const GET_ETH_TWEETS_START = "GET_ETH_TWEETS_START";
+export const GET_ETH_TWEETS_SUCCESS = "GET_ETH_TWEETS_SUCCESS";
+export const GET_ETH_TWEETS_FAIL = "GET_ETH_TWEETS_FAIL";
 
 export const getUsers = () => (dispatch) => {
   dispatch({ type: GET_TWITTER_USERS_START });
@@ -28,16 +32,30 @@ export const getUsers = () => (dispatch) => {
     });
 };
 
-export const getTweets = (userID) => (dispatch) => {
-  dispatch({ type: GET_TWEETS_START });
+export const getBBCTweets = () => (dispatch) => {
+  dispatch({ type: GET_BBC_TWEETS_START });
   axiosTwitterWrapper()
     .get(
-      `/users/${userID}/tweets?max_results=100&expansions=author_id&tweet.fields=author_id,created_at,public_metrics&user.fields=created_at,description,location,id,name,profile_image_url,username,verified`
+      `/users/36670025/tweets?max_results=100&expansions=author_id&tweet.fields=author_id,created_at,public_metrics&user.fields=created_at,description,location,id,name,profile_image_url,username,verified`
     )
     .then((res) => {
-      dispatch({ type: GET_TWEETS_SUCCESS, payload: res.data.data });
+      dispatch({ type: GET_BBC_TWEETS_SUCCESS, payload: res.data.data });
     })
     .catch((err) => {
-      dispatch({ type: GET_TWEETS_FAIL, payload: err });
+      dispatch({ type: GET_BBC_TWEETS_FAIL, payload: err });
+    });
+};
+
+export const getETHTweets = () => (dispatch) => {
+  dispatch({ type: GET_ETH_TWEETS_START });
+  axiosTwitterWrapper()
+    .get(
+      `/users/2312333412/tweets?max_results=100&expansions=author_id&tweet.fields=author_id,created_at,public_metrics&user.fields=created_at,description,location,id,name,profile_image_url,username,verified`
+    )
+    .then((res) => {
+      dispatch({ type: GET_ETH_TWEETS_SUCCESS, payload: res.data.data });
+    })
+    .catch((err) => {
+      dispatch({ type: GET_ETH_TWEETS_FAIL, payload: err });
     });
 };
