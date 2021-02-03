@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { getUsers, getBBCTweets, getETHTweets } from "../actions/index.js";
 import { makeStyles } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
+// import { jsPDF } from "jspdf";
+// import html2canvas from "html2canvas";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -14,6 +16,28 @@ const useStyles = makeStyles((theme) => ({
     height: "75vh",
   },
 }));
+
+// const captureScreen = (type, name) => {
+//   html2canvas(document.querySelector(`#capture`)).then((canvas) => {
+//     let dataURL = canvas.toDataURL("image/png");
+
+//     if (type === "pdf") {
+//       const pdf = new jsPDF({
+//         orientation: "portrait",
+//         unit: "in",
+//         format: [9, 11],
+//       });
+
+//       pdf.addImage(dataURL, "PNG", 0.6, 0.6);
+//       pdf.save(`${name}.pdf`);
+//     } else if (type === "png") {
+//       var link = document.createElement("a");
+//       link.download = `${name}.png`;
+//       link.href = dataURL;
+//       link.click();
+//     }
+//   });
+// };
 
 const Home = () => {
   const [coinInfo, setCoinInfo] = useState([]);
@@ -39,6 +63,7 @@ const Home = () => {
 
   return (
     <>
+      {/* <div id={`capture`}> */}
       <CssBaseline />
       <Container maxWidth={false} className={classes.mainContainer}>
         <Grid container={true} spacing={4}>
@@ -56,6 +81,7 @@ const Home = () => {
             : ""}
         </Grid>
       </Container>
+      {/* </div> */}
     </>
   );
 };

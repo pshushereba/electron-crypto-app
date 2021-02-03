@@ -171,3 +171,16 @@ TWITTER_BEARER_TOKEN=YOUR_API_KEY
     }
 }
 ```
+
+<br>
+<br>
+
+### Details regarding screen capture feature:
+
+I ran into trouble while working on implementing the screen capture functionality. My approach was to use `html2canvas` and `jsPDF` to capture an image of all of the content within a specified `<div>`. I was going to wrap the entire `Home` component, which includes the price data in a special `div`, to target on a button click.
+
+Trouble started when I tried to write out the logic for capturing the screen. I left the code commented out inside of `Home.js`. It threw an error regarding `global not being defined`. I believe that it had to do with the `html2canvas` library and its implementation. One possible solution would be to change the Content Security Policy, but that opens up the application to unnecessary risk.
+
+After that problem is solved, I was having difficulty figuring out how to get the information from my component to the main process, so that I could use the `fs` module and save the PDF to the user's computer. I expect I would have to define the function to save the PDF in a separate file, and change the way that I was calling it, as well as the layout. Because the `Nav` component isn't directly connected to the `Home` component.
+
+Another possible solution that I came across as a solution to this task was to create a video element, and take advantage of `navigator.mediaDevices.getUserMedia()` to create a stream, and then write that stream to a canvas element. However I ran out of time before I could explore that option more.

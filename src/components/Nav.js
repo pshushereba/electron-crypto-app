@@ -52,10 +52,20 @@ const Nav = () => {
           >
             Twitter Feed
           </Button>
-          <Button className={classes.btn} variant="outlined" color="inherit">
+          <Button
+            className={classes.btn}
+            variant="outlined"
+            color="inherit"
+            disabled
+          >
             Export as PDF
           </Button>
-          <Button className={classes.btn} variant="outlined" color="inherit">
+          <Button
+            className={classes.btn}
+            variant="outlined"
+            color="inherit"
+            disabled
+          >
             Export as PNG
           </Button>
         </Toolbar>

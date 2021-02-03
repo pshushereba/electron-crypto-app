@@ -4,8 +4,10 @@ const {
   ipcMain,
   Notification,
   desktopCapturer,
+  dialog,
 } = require("electron");
 const path = require("path");
+const fs = require("fs");
 const isDev = !app.isPackaged;
 
 function createWindow() {
@@ -22,7 +24,7 @@ function createWindow() {
   });
 
   win.loadFile("index.html");
-  isDev && win.webContents.openDevTools();
+  //isDev && win.webContents.openDevTools();
 }
 
 if (isDev) {
@@ -52,3 +54,23 @@ app.on("activate", () => {
     createWindow();
   }
 });
+
+// Function to save screenshot as PDF
+
+// exports.savePDF = (file) => {
+//   if (!file) {
+//     file = dialog.showSaveDialog(win, {
+//       title: "Save as PDF",
+//       defaultPath: app.getPath("desktop"),
+//       filters: [
+//         {
+//           name: "PDF Files",
+//           extensions: ["pdf"],
+//         },
+//       ],
+//     });
+//   }
+
+//   if (!file) return;
+//   fs.writeFileSync(file);
+// };
