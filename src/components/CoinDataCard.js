@@ -23,10 +23,10 @@ const CoinDataCard = (props) => {
         {props.data.name}
       </Typography>
       <Typography variant="body1" gutterBottom="true">
-        {props.data.symbol}
+        Symbol: {props.data.symbol}
       </Typography>
       <Typography variant="body2" gutterBottom="true">
-        {props.data.price}
+        Current Price: ${Number.parseFloat(props.data.price).toFixed(3)}
       </Typography>
       <QRCode
         size={100}

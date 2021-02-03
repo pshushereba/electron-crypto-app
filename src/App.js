@@ -4,6 +4,7 @@ import { CssBaseline } from "@material-ui/core";
 import { Route, Switch } from "react-router-dom";
 import theme from "./styles/Theme.js";
 import Nav from "./components/Nav.js";
+import Footer from "./components/Footer.js";
 
 import HomeView from "./views/Home.js";
 import FeedsView from "./views/Feeds.js";
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" component={HomeView} />
           <Route exact path="/feeds" component={FeedsView} />
         </Switch>
+        <Footer />
       </ThemeProvider>
     </>
   );

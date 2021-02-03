@@ -10,6 +10,15 @@ const theme = createMuiTheme({
       main: "#E3E3E3",
     },
   },
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        body: {
+          backgroundColor: "#e3e3e3",
+        },
+      },
+    },
+  },
 });
 
 export default theme;

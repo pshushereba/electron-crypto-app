@@ -18,8 +18,14 @@ const DeveloperDataCard = () => {
 
   return (
     <Card className={classes.card}>
-      <Typography variant="h4" gutterBottom="true">
+      <Typography variant="h4" gutterBottom="true" align="center">
         Patrick Shushereba
+      </Typography>
+      <Typography variant="body1" gutterBottom="true">
+        Symbol: PS
+      </Typography>
+      <Typography variant="body2" gutterBottom="true">
+        Current Price: Negotiable
       </Typography>
       <QRCode size={100} level="M" value="Patrick Shushereba" />
     </Card>
